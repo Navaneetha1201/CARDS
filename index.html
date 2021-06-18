@@ -5,6 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAREBUZZ</title>
+	 <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        <link
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+              rel="stylesheet"
+              />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        <link
+              href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap"
+              rel="stylesheet"
+              />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        <link
+              href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap"
+              rel="stylesheet"
+              />
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+        <link rel='stylesheet' href='neon-buttons.css'>
   <style>
 
     body {
@@ -174,7 +197,71 @@ a:hover { color: #6b363e; border-bottom: 1px solid #6b363e; border-color: rgba(1
 iframe{
 	background-color:black;
 	  }
-/* Main overlay */
+.container,.neon-button-row,.front-page-section{
+    display: flex;
+}
+
+.container{
+  justify-content:center;
+}
+
+.front-page-section{
+margin:100px 0px 0px 0px;
+  flex-direction:column;
+  padding:2px 2px 40px 2px;
+}
+
+.neon-button-row{
+
+    flex-direction: row;
+}
+
+.neon-button{
+    color:white;
+    font-size: 18px;
+    background: black;
+    padding:10px 23px 8px 23px;
+    font-family: sans-serif;
+    text-decoration: none;
+    background: linear-gradient(#1bddf7,#09b0c6);
+    box-shadow: 2px 2px 2px 2px #0dd1eb
+        ,  2px 2px 22px 2px #0dd1eb, 2px 2px 12px 2px #0dd1eb
+        , 2px 2px 22px 2px #0dd1eb;
+    border-radius:200px;
+}
+
+
+.neon-button:nth-child(3){
+    background: linear-gradient(rgb(210, 49, 238),rgb(174, 11, 211));
+    box-shadow:  #fc37f8
+    ,   #fc37f8, 2px 2px 42px 2px #fc37f8
+    , 2px 2px 52px 2px #fc37f8;
+}
+
+
+.neon-button:hover{
+border-radius:4px;
+  padding:12px 37px 2px 37px;
+    transition:.5s;
+}
+
+
+.neon-button:active{
+    transition:2s;
+  transform:rotate(360deg);
+  border-radius:4px;
+  padding:12px 18px 2px 18px;
+    transition:1.7s;
+  color:white;
+  box-shadow:.2px .2px 86px .2px white;
+
+}
+
+
+.neon-button-row{
+    justify-content: space-around;
+}
+
 
   </style>
 </head>
@@ -237,6 +324,20 @@ iframe{
   <div class="content">
     <iframe src="https://thilaga12.github.io/video1/" frameborder=0 width="1800px" height="450px"></iframe>
   </div>
-<a href="card2.html"><button style="color:white; font-size:25px; background-color:red; top:20%;">Continue</button>
+	<br><br>
+<div class='container'>
+          
+            <div class='neon-button-row'>
+
+               
+
+               <b> <a class='neon-button' href='card2.html'>CONTINUE</a></b>
+            </div>
+            
+                </div>
+
+          </div>
+          </div></center>
+ 
 </body>
 </html>
