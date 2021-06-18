@@ -240,113 +240,38 @@ a:hover { color: #6b363e; border-bottom: 1px solid #6b363e; border-color: rgba(1
   </div>
 </div>
 
-<body id="test">
-    <div class="responsive-gallery">
-  
-    <!-- DEMO -->
-  <h2 style="color:white; font-size:30px; ">IMPORTANT FEATURES OF TAMILNADU</h2><br><br>
-    <div class="lightbox">
-  
-      <div class="image-thumb">
-        <a class="fancybox" rel="gallery" href="javascript:console.log(document.body.childNodes[1].firstElementChild);" title="Image #001" data-number="0">
-          <img src="lit.jpeg" width="324" height="324" data-vidsrc="litvid.mp4" data-title="ABC Blocks">
-        </a>
-       
-      </div>
-      <div class="image-thumb">
-        <a class="fancybox" rel="gallery" href="javascript:;" title="Image #002" data-number="1">
-          <img src="poets.jpeg" width="324" height="324" data-vidsrc="poetsvid.mp4" data-title="Critchfield Meats">
-        </a>
-       
-      </div>
-      <div class="image-thumb">
-        <a class="fancybox" rel="gallery" href="javascript:;" title="Image #003" data-number="2">
-          <img src="cher.jpeg" width="324" height="324" data-vidsrc="chervid.mp4" data-title="Wildcat Logo">
-        </a>
-       
-      </div>
-  
-    </div><!-- /.lightbox -->
-  
-  </div><!-- /.responsive-gallery -->
-  
-  <div id="videomodal" class="videowrap">
-    <div id="playa" class="iframe-respwrap"><!-- ?autoplay=0&title=0&byline=0&portrait=0 -->
-      <div style="padding:56.25% 0 0 0; position:relative;">
-        <iframe src="https://player.vimeo.com/video/317611976" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div><!--responsivewrap-->
-    </div><!--/#playa-->
-  </div><!--/#videomodal-->
-  <script>
+<div class="container gallery-container">
+
+
     
-// Query All Needed Elements
-var overlay = document.querySelector("#videomodal");
-var iframePlayer = document.querySelector(".iframe-respwrap");
-var videoIframe = document.querySelector(".iframe-respwrap iframe");
-var newPlayer = new Vimeo.Player(videoIframe);
-// Expose the Source Attribute of the iframe
-var iframeSrcAtt = videoIframe.src;
-// console.log("Iframe Source: " + iframeSrcAtt);
+    <div class="tz-gallery">
 
-// Get all of the links
-var allItems = document.querySelectorAll('.lightbox a');
-console.log(allItems + " - Total (NodeList) Length: " + (allItems.length));
-// Get source of Last Item in Array
-const finalVideoSrc = allItems[allItems.length-1].children[0].dataset.vidsrc;
+        <div class="row">
+            <div class="col-sm-6 col-md-4" >
+                <a class="lightbox" href="poetsvdo.mp4">
+                    <img src="poets.jpg" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4" >
+                <a class="lightbox" href="kingsvdo.mp4">
+                    <img src="kings.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="ovi.mp4">
+                    <img src="lit.jpg" alt="Tunnel">
+                </a>
+            </div>
+        </div>
 
-// Open/Close overlay
-function toggleOverlay(state) { overlay.classList.toggle('video-on'); }
-function closeOverlay(e) {
-	overlay.classList.toggle('video-on');
-	newPlayer.pause().then(function() {newPlayer.unload();}).catch(function(error) { console.log(error); });
-}
-overlay.addEventListener('click', closeOverlay, false);
+    </div>
 
-// Get initial clicked item source and number
-function clickedItem(e) {
-	e.preventDefault();
-	let clickedSource = e.target.dataset.vidsrc;
-	let clickedNumber = parseInt(e.target.parentNode.dataset.number, 10);
-	startVidLoop(clickedSource, clickedNumber);
-}
+</div>
 
-// ------------------------------------------
-// START HERE!!   Add Event listener to each link
-var z;
-for (z=0; z < allItems.length; z++) {
-	// console.log(allItems[z].children[0].dataset.vidsrc);
-	allItems[z].addEventListener('click', clickedItem, false);
-	allItems[z].addEventListener('click', toggleOverlay, false);
-}
-
-function startVidLoop(vidSrc, vidNumber) {
-	if (vidSrc == finalVideoSrc) {
-		console.log("Incoming: "+ vidSrc + ", Equals Final Video in List: " + finalVideoSrc);
-		newPlayer.loadVideo(vidSrc).then(function(src) {console.log("END! " + src); newPlayer.play(src);}).catch(function(error) {console.log(error);});
-		newPlayer.off();
-		return;
-	} else {
-		let nextNumber = vidNumber + 1;
-		let comingUp = allItems[nextNumber].children[0].dataset.vidsrc;
-		console.log("Playing Now: "+vidNumber+" - "+vidSrc); console.log("Coming Up: "+nextNumber+" - "+comingUp);
-		newPlayer.loadVideo(vidSrc).then(function(src) {playVideo(src,comingUp,nextNumber);}).catch(function(error) {console.log(error);});
-	}
-}
-
-function playVideo(vimeoSource,nextVid,nextNumber) {
-	console.log("Play: " + vimeoSource + " Next: " + nextVid);
-	newPlayer.play(vimeoSource);
-	if (nextVid == finalVideoSrc) {
-		console.log("Last Video is Next!");
-		nextVid = finalVideoSrc;
-	}
-	newPlayer.on('ended', function go(data) {
-		startVidLoop(nextVid, nextNumber)
-	});
-}
-
-  </script>
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
 <br><br><a href="card2.html"><button style="color:white; font-size:20px; background-color:red; ">Continue</button>
     </a></center>
  
