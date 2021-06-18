@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAREBUZZ</title>
+  <style>
+
+    body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  background-color: black;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+ 
+}
+.scope {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: slid 30s linear infinite;
+top:15px;
+}
+
+.scope span {
+  position: absolute;
+  top: 140px;
+  
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+.scope span img {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 2s;
+}
+.scope span:hover img {
+  transform: translateY(-50px) scale(1.7);
+}
+@keyframes slid {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+body {
+ 
+  font-family: 'Bodoni Moda', serif;
+}
+.cards-row {
+  display: flex;
+  
+  flex: 20%;
+  width: 50%;
+  margin: auto; 
+  padding-top:40px;
+}
+.card {
+  height: 400px;
+  width:250px;
+  color: black;
+  background: silver;
+  padding: 1em;
+  box-shadow: -6px 0px 11px 0 rgb(0 0 0 / 52%);
+  border-radius: 1em;
+  margin-left: -20%;
+  transition: .4s;
+  position: relative;
+  border-top: 5px solid;
+}
+.card:before {
+  content:attr(title);
+  position:absolute;
+  left:-20px;
+  width:20px;
+  padding: 1em 0;
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  box-shadow: 6px 0px 11px 0 rgb(0 0 0 / 52%);
+  border-radius: 0 1em 1em 0;
+  color:white
+}
+.card:nth-child(1):before{
+  background:tomato;
+} 
+.card:nth-child(2):before{
+  background:dodgerblue;
+} 
+.card:nth-child(3):before{
+  background:limegreen;
+} 
+.card:nth-child(4):before{
+  background:purple;
+} 
+.card:nth-child(5):before{
+  background:crimson;
+} 
+.card:nth-child(6):before{
+  background:tomato;
+} 
+
+.card:first-child, .card:last-child:hover {
+  margin: 0;
+}
+.card:last-child:hover {
+  transform: none;
+  margin-right: 0;
+}
+.card:hover {
+  margin-right: 20%;
+  transform: rotate(3deg) translateY(-10px);
+}
+a {
+  color:#333    
+}
+.responsive-gallery {	width: 80%; margin: 40px auto; color: #333; font-family: sans-serif; padding-top:100px; }
+
+@media only screen and (max-width: 960px) {
+	.responsive-gallery { width: 95%; }
+}
+
+h1 { line-height: 24px; font-size: 24px; }
+h1 + p { line-height: 24px; font-size: 16px; }
+a { color: #333; text-decoration: none; border-bottom: 1px solid #ccc; }
+a:hover { color: #6b363e; border-bottom: 1px solid #6b363e; border-color: rgba(107,54,62,0.7); }
+.return { margin: 0 0 30px 0; font-size: 12px; }
+
+.lightbox a, .lightbox a:hover,
+.fancybox-overlay a, .fancybox-nav, .fancybox-close { border: 0; }
+
+.lightbox {text-align:center;}
+
+.image-thumb {
+	position:relative; display:inline-block; margin:0 10px 10px 0;
+	width: -moz-calc(33.333% - 20px); width: -webkit-calc(33.333% - 20px); width: calc(33.333% - 20px); height:33.333%;
+}
+.image-thumb:nth-child(3n) { margin-right: 0; }
+
+.image-thumb a.fancybox,
+.image-thumb a.fancybox img { display: block; width: 100%; height: 100%; margin: 0; padding: 0; }
+
+.image-thumb .image-title {
+	position: absolute; bottom: 0; left: 0;
+	box-sizing: border-box; width: 100%; margin: 0; padding: 2% 0;
+	color: #fff; background-color: #333; background-color: rgba(0,0,0,0.5);
+	line-height: 16px; font-size: 12px; text-align: center;
+}
+
+.fancybox-title {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 480px) {
+	.image-thumb { width: 100%; height: auto; }
+}
+iframe{
+	background-color:black;
+	  }
+/* Main overlay */
+
+  </style>
+</head>
+<body>
+<center>
+<h1 style="color:white; font-size:40px;">CULTURES OF TAMILNADU</h1><img src="logo.jpeg" height="13%" width="30%" style="padding-top:20px;">
+  <div class="scope">
+    <span style="--i:1;"><img src="ovi.jpg" alt="not found"></span>
+    <span style="--i:2;"><img src="music.jpeg" alt="not found"></span>
+    <span style="--i:3;"><img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/06/30/Pictures/_06ebc38a-3ea8-11e6-86cd-639e2418d1d4.jpg" alt="not found"></span>
+    <span style="--i:4;"><img src="https://images.shaadisaga.com/shaadisaga_production/photos/pictures/001/859/953/original/mini_magick20200731-15046-1k640oz.jpg?1596180264" alt="not found"></span>
+    <span style="--i:5;"><img src="https://cdn.downtoearth.org.in/library/large/2019-02-01/0.08051200_1549014357_farmer1.jpg" alt="not found"></span>
+    <span style="--i:6;"><img src="https://www.goroadtrip.com/wp-content/uploads/2018/05/pongal.jpg" alt="not found"></span>
+    <span style="--i:7;"><img src="https://i.pinimg.com/736x/e1/ca/16/e1ca16a962f9a33e9c5f44b98890d54d.jpg" alt="not found"></span>
+    <span style="--i:8;"><img src="india.jpeg" alt="not found"></span>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h1 style="color:white; font-size:40px;">TRADITIONS OF TAMILNADU</h1>
+  <div class="cards-row">
+<div class="card" title="LANGUAGE">
+    <h3>LANGUAGE</h3>
+	<img src="https://tse1.mm.bing.net/th?id=OIP.BrUaS02ArG3QJ25pYxGUzAHaE8&pid=Api&P=0&w=247&h=166" height="30%" width="100%">
+    <p>Tamil (தமிழ் ) is a classical language and one of the major languages of the Dravidian language family. Origin of Tamil language is from Kumarikandam (Lemuria).Tamil is the first language of the majority in the southern Indian state.</p>
+ 
+  </div>
+  
+  <div class="card" title="KINGDOMS">
+    <h3>KINGDOMS</h3>
+	<img src="https://tse4.mm.bing.net/th?id=OIP.hfCI7waaL7yrQqCqHZsTrQHaEK&pid=Api&P=0&w=331&h=187" height="30%" width="100%">
+    <p>In the olden golden days, Tamil Nadu constituted three kingdoms.They were ruled by Pandiayas kingdom in Tamilnadu, Cheras kingdom in Tamilnadu, Cholas kingdom in TamilnaduAll three kingdoms were patriotic towards their language.</p>
+    
+  </div>
+  <div class="card" title="DANCE">
+    <h3>DANCE</h3>
+	<img src="bar.jpeg" height="30%" width="100%">
+    <p>Bharatanatyam is a major genre of Indian classical dance that originated in Tamil Nadu. Traditionally, Bharatanatyam has been a solo dance that was performed exclusively by women,and expressed South Indian religious themes and spiritual ideas, particularly of Shaivism, but also of Vaishnavism and Shaktism.</p>
+ 
+  </div>
+  <div class="card" title="MUSIC">
+    <h3>MUSIC</h3>
+	<img src="mus.jpeg" height="30%" width="100%">
+    <p>Pann, which is the classical music form of Southern India, has a long history in Tamil Nadu. Later the name was mistakenly changed as Carnatic music. Even today Pannisai is sung in temple festivals. Tamil Nadu has produced a number of famous performers, as well as a closely related classical dance form Bharatha Natyam.</p>
+
+  </div>
+  <div class="card" title="FOOD">
+    <h3>FOOD</h3>
+	<img src="https://tse3.mm.bing.net/th?id=OIP.utNc8VLs-_94MOiWwb127QHaEn&pid=Api&P=0&w=287&h=179" height="30%" width="100%">
+    <p>Tamil cuisine is a culinary style originating in the southern Indian state Tamil Nadu and other parts of South Asia like Sri Lanka. Vegetarian cuisine is popular among the Tamil people and has been since ancient times. However, meats along with rice, legumes and lentils are also popular.</p>
+    
+  </div>
+  <div class="card" title="DRESS">
+    <h3>DRESS</h3>
+	<img src="dress.jpeg" height="30%" width="100%">
+    <p>Traditional Dress of Tamil Nadu portrays the cultural and traditional essence of the state. The men of Tamil Nadu wear traditional attires like Lungi or Dhoti, with Angavastra and a shirt. The women adorn themselves in traditional Saree .</p>
+    
+  </div>
+</div>
+	<br><br><br><br>
+<h2 style="color:white; font-size:30px;">INTERESTING VIDEOS OF TAMIL LANGUAGE</h2>
+  <div class="content">
+    <iframe src="https://thilaga12.github.io/video1/" frameborder=0 width="1800px" height="450px"></iframe>
+  </div>
+<a href="card2.html"><button style="color:white; font-size:25px; background-color:red; top:20%;">Continue</button>
+</body>
+</html>
